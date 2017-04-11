@@ -150,6 +150,8 @@ MQTTClient.prototype.connect = function(reconnect) {
       connectionParams.userName = this.userName;
       connectionParams.password = this.password;
     }
+    // Hard code to have cleanSession set to false
+    connectionParams.cleanSession = false;
     if (this.keepAliveInterval) connectionParams.keepAliveInterval = this.keepAliveInterval;
     if (this.timeout) connectionParams.timeout = this.timeout;
     try {
